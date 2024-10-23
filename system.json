@@ -1,5 +1,5 @@
 {
-    "name": "hg2e",
+    "name": "heavygear2e",
     "title": "Heavy Gear 2nd Edition",
     "description": "A simple system to play Heavy Gear 2nd Edition on Foundry.",
     "author": "Bitwise",
@@ -12,7 +12,7 @@
     "styles": [
         "hg2e.css"
     ],
-    "gridDistance": 5,
-    "gridUnits": "ft"
+    "grid.distance": 5,
+    "grid.units": "ft"
 
 }
