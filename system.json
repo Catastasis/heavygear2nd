@@ -2,17 +2,20 @@
     "name": "heavygear2e",
     "title": "Heavy Gear 2nd Edition",
     "description": "A simple system to play Heavy Gear 2nd Edition on Foundry.",
-    "author": "Bitwise",
+    "authors": [
+        {
+            "name": "Bitwise"
+        }
+    ],
     "version": "0.0.1",
-    "minimumCoreVersion": "12",
-    "compatibleCoreVersion": "12",
+    "compatibility": {
+        "minimum": "12",
+        "verified": "12"
+    },
     "esmodules": [
-        "hg2e.js"
+        "./modules/hg2e.mjs"
     ],
     "styles": [
-        "hg2e.css"
-    ],
-    "grid.distance": 5,
-    "grid.units": "ft"
-
+        "./styles/hg2e.css"
+    ]
 }

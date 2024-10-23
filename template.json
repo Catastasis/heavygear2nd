@@ -1,4 +1,104 @@
 {
-    "Actor": {},
-    "Items": {}
+    "Actor": {
+        "types": ["Character", "NPC", "Vehicle", "Infantry"],
+        "templates": {
+            "base": {
+                "description": ""
+            },
+            "personal": {
+                "attributes": {
+                    "AGI": {
+                        "value": 0
+                    },
+                    "APP": {
+                        "value": 0
+                    },
+                    "BLD": {
+                        "value": 0
+                    },
+                    "CRE": {
+                        "value": 0
+                    },
+                    "FIT": {
+                        "value": 0
+                    },
+                    "INF": {
+                        "value": 0
+                    },
+                    "KNO": {
+                        "value": 0
+                    },
+                    "PER": {
+                        "value": 0
+                    },
+                    "PSY": {
+                        "value": 0
+                    },
+                    "WIL": {
+                        "value": 0
+                    }
+                },
+                "secondary_traits": {
+                    "STR": {
+                        "value": 0
+                    },
+                    "HEA": {
+                        "value": 0
+                    },
+                    "STA": {
+                        "value": 0
+                    },
+                    "UD": {
+                        "value": 0
+                    },
+                    "AD": {
+                        "value": 0
+                    }
+                },
+                "physical_status": {
+                    "flesh_wound": {
+                        "score": 0,
+                        "armor": 0,
+                        "penalty": "-1",
+                        "amount": 0
+                    },
+                    "deep_wound": {
+                        "score": 0,
+                        "armor": 0,
+                        "penalty": "-2",
+                        "amount": 0
+                    },
+                    "instant_death": {
+                        "score": 0,
+                        "armor": 0,
+                        "penalty": "DEAD",
+                        "amount": 0
+                    }
+                }
+            },
+            "tactical": {
+
+            }
+        }
+    },
+    "Item": {
+        "types": ["Equipment", "Weapon", "Perk", "Flaw", "Defect"],
+        "templates": {
+            "base": {
+                "description": ""
+            }
+        },
+        "Weapon": {
+            "templates": ["base"],
+            "code": "",
+            "range_short": 0,
+            "range_medium": 0,
+            "range_long": 0,
+            "range_extreme": 0,
+            "damage_multiplier": 0,
+            "accuracy": 0,
+            "rate_of_fire": 0,
+            "minimum_size": 0
+        }
+    }
 }
