@@ -1,0 +1,317 @@
+/* Base Variables and Sheet Layout */
+.heavygear2e {
+    --border-color: #000;
+    --bg-color: #fff;
+    --text-color: #000;
+    --text-color-dim: #666;
+    --section-spacing: 1rem;
+    --input-height: 24px;
+}
+
+.heavygear2e.sheet.actor {
+    min-width: 700px;
+    min-height: 700px;
+}
+
+.heavygear2e .window-content {
+    background: var(--bg-color);
+}
+
+/* Form Layout */
+.heavygear2e form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;  /* Prevent form overflow */
+}
+
+/* Tab Navigation */
+.heavygear2e .sheet-tabs {
+    flex: 0 0 40px;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--section-spacing);
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.heavygear2e .sheet-tabs .item:hover {
+    background: rgba(0, 0, 0, 0.2);
+    text-shadow: none;
+}
+
+.heavygear2e .tab {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+
+.heavygear2e .sheet-tabs .item {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+    background: rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.heavygear2e .sheet-tabs .item.active {
+    background: var(--border-color);
+    color: var(--bg-color);
+}
+
+/* Section Headers */
+.heavygear2e .section-header {
+    background: var(--border-color);
+    color: var(--bg-color);
+    padding: 2px 5px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid Layouts */
+.heavygear2e .sheet-grid {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;  /* Prevent horizontal scroll */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 5px;     /* Add some padding instead of letting content touch edges */
+}
+
+.heavygear2e .header-section {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: var(--section-spacing);
+    margin-bottom: var(--section-spacing);
+}
+
+.heavygear2e .stats-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--section-spacing);
+}
+
+/* Form Elements */
+.heavygear2e .form-group {
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 10px; /* Add padding to prevent edge collision */
+}
+
+.heavygear2e .form-group label {
+    flex: 0 0 100px;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 1%;
+    white-space: nowrap;  /* Prevent label wrapping */
+}
+
+.heavygear2e .form-group input {
+    flex: 1;
+    min-width: 0;        /* This is crucial for flex items */
+    width: 100%;         /* Force width containment */
+    max-width: 100%;     /* Prevent overflow */
+    margin-right: 0;     /* Remove right margin */
+    height: var(--input-height);
+    box-sizing: border-box;
+    padding: 1px 3px;
+}
+
+.heavygear2e input[type="text"],
+.heavygear2e input[type="number"] {
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    padding: 1px 3px;
+}
+
+/* Profile Image */
+.heavygear2e .profile-img-container {
+    width: 100%;
+    height: 200px;
+    border: 1px solid var(--border-color);
+}
+
+.heavygear2e .profile-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Attributes and Traits */
+.heavygear2e .attributes-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin-bottom: var(--section-spacing);
+}
+
+.heavygear2e .attribute-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.heavygear2e .attribute-group label {
+    font-weight: bold;
+    text-align: center;
+}
+
+.heavygear2e .attribute-group input {
+    width: 40px;
+    text-align: center;
+}
+
+.heavygear2e .secondary-trait {
+    margin-top: 2px;
+    padding-top: 2px;
+}
+
+/* Tables */
+.heavygear2e table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5px;
+}
+
+.heavygear2e th,
+.heavygear2e td {
+    border: 1px solid var(--border-color);
+    padding: 2px 4px;
+    text-align: center;
+}
+
+.heavygear2e th {
+    background: var(--border-color);
+    color: var(--bg-color);
+}
+
+/* Status Section */
+.heavygear2e .status-section table {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* System Shock */
+.heavygear2e .system-shock {
+    grid-column: span 2;
+    margin-top: var(--section-spacing);
+    padding-top: var(--section-spacing);
+    border-top: 1px solid var(--border-color);
+}
+
+.heavygear2e .shock-track {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    gap: 2px;
+}
+
+.heavygear2e .shock-box {
+    aspect-ratio: 1;
+    border: 1px solid var(--border-color);
+    background: #ccc;  /* Default gray for inactive */
+    cursor: pointer;
+}
+
+.shock-box:hover {
+    border-color: #666;
+}
+
+.shock-box.active {
+    background: white;
+}
+
+.shock-box.marked {
+    background: red;
+}
+
+/* Gray out inactive boxes */
+.shock-box:not(.active) {
+    cursor: not-allowed;
+    background: #ccc;
+}
+
+/* Skills Section */
+.heavygear2e .skills-grid {
+    column-count: 2;
+    column-gap: 10px;
+}
+
+.heavygear2e .skill-group {
+    break-inside: avoid;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.heavygear2e .skill-group-header {
+    background: var(--border-color);
+    color: var(--bg-color);
+    padding: 2px 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Skill Entries */
+.heavygear2e .skill {
+    border: 1px solid var(--border-color);
+}
+
+.heavygear2e .skill:not(.trained) {
+    color: var(--text-color-dim);
+}
+
+.heavygear2e .skill:not(.trained) input {
+    color: var(--text-color-dim);
+    background: #f5f5f5;
+}
+
+.heavygear2e .skill.trained {
+    color: var(--text-color);
+}
+
+.heavygear2e .skill.trained input {
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+.heavygear2e .skill:hover {
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+/* Skill Table Layout */
+.heavygear2e .skill-name {
+    width: 60%;
+    padding: 2px 4px;
+}
+
+.heavygear2e .skill-complexity {
+    width: 30px;
+    text-align: center;
+}
+
+.heavygear2e .skill-level,
+.heavygear2e .skill-mod {
+    width: 15%;
+}
+
+.heavygear2e .skill-level input,
+.heavygear2e .skill-mod input {
+    width: 40px;
+}
+
+/* Description Area */
+.heavygear2e .description textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}

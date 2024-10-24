@@ -6,6 +6,12 @@
                 "description": ""
             },
             "personal": {
+                "personal_info": {
+                    "profession": "",
+                    "rank": "",
+                    "nationality": "",
+                    "unit": ""
+                },
                 "attributes": {
                     "AGI": {
                         "value": 0
@@ -73,6 +79,11 @@
                         "armor": 0,
                         "penalty": "DEAD",
                         "amount": 0
+                    },
+                    "system_shock": {
+                        "max_boxes": 20,
+                        "active_boxes": 0,
+                        "marked_boxes": []
                     }
                 }
             },
