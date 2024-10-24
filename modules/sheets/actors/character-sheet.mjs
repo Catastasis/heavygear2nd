@@ -10,10 +10,9 @@ export class HeavyGearCharacterSheet extends ActorSheet {
 
     getData() {
         const context = super.getData();
-        const actorData = context.data;
 
-        context.system = actorData.system;
-        context.flags = actorData.flags;
+        context.system = this.actor.system;
+        context.flags = this.actor.flags;
 
         return context;
     }
@@ -31,13 +30,12 @@ export class HeavyGearCharacterSheet extends ActorSheet {
 
         // Get current marks array or initialize it
         const marks = this.actor.system.physical_status.system_shock.marked_boxes || [];
-        
-        // Toggle the mark
-        marks[index] = !marks[index];
+        const newMarks = [... marks];
+        newMarks[index] = !newMarks[index];
 
         // Update the actor
         this.actor.update({
-            'system.physical_status.system_shock.marked_boxes': marks
+            'system.physical_status.system_shock.marked_boxes': newMarks
         });
     }
 }

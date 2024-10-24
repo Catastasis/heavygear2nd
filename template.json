@@ -90,6 +90,9 @@
             "tactical": {
 
             }
+        },
+        "Character": {
+            "templates": ["base", "personal"]
         }
     },
     "Item": {

@@ -170,6 +170,12 @@
     text-align: center;
 }
 
+.heavygear2e .attribute-group input:disabled {
+    width: 40px;
+    text-align: center;
+    background-color: #ccc;
+}
+
 .heavygear2e .secondary-trait {
     margin-top: 2px;
     padding-top: 2px;
