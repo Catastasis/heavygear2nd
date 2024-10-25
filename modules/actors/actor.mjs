@@ -65,7 +65,19 @@ export class HeavyGearActor extends Actor {
         systemData.physical_status.instant_death.score = systemData.secondary_traits.STA.value * 2;
         
         // System Shock = 5 + HEA, minimum 1
-        systemData.physical_status.system_shock.active_boxes = 
+        systemData.physical_status.system_shock.shock_threshold = 
         Math.max(1, 5 + systemData.secondary_traits.HEA.value);
+
+        // Calculate the amount of system shock this character has accrued.
+        // Every light wound inflicts 1 point; every deep wound inflicts 2.
+        systemData.physical_status.system_shock.current_shock = 
+            systemData.physical_status.flesh_wound.amount + 
+            (systemData.physical_status.deep_wound.amount * 2);
+
+        // Check whether system shock has exceeded the threshold. This should warn the character is entering shock.
+        if (systemData.physical_status.system_shock.current_shock > systemData.physical_status.system_shock.shock_threshold) {
+            // TODO implement chunky salsa rules.
+            this.element?.classList.add('system-shock-exceeded');
+        };
     };
 }

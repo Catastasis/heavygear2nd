@@ -128,24 +128,24 @@
                             <tbody>
                                 <tr>
                                     <td>FLESH WOUND</td>
-                                    <td><input type="number" name="system.physical_status.flesh_wound.score" value="{{system.physical_status.flesh_wound.score}}" /></td>
-                                    <td><input type="number" name="system.physical_status.flesh_wound.armor" value="{{system.physical_status.flesh_wound.armor}}" /></td>
+                                    <td><input type="number" disabled name="system.physical_status.flesh_wound.score" value="{{system.physical_status.flesh_wound.score}}" /></td>
+                                    <td><input type="number" disabled name="system.physical_status.flesh_wound.armor" value="{{system.physical_status.flesh_wound.armor}}" /></td>
                                     <td>-1</td>
-                                    <td></td>
+                                    <td><input type="number" name="system.physical_status.flesh_wound.amount" value="{{system.physical_status.flesh_wound.amount}}" /></td>
                                 </tr>
                                 <tr>
                                     <td>DEEP WOUND</td>
-                                    <td><input type="number" name="system.physical_status.deep_wound.score" value="{{system.physical_status.deep_wound.score}}" /></td>
-                                    <td></td>
+                                    <td><input type="number" disabled name="system.physical_status.deep_wound.score" value="{{system.physical_status.deep_wound.score}}" /></td>
+                                    <td><input type="number" disabled name="system.physical_status.deep_wound.armor" value="{{system.physical_status.deep_wound.armor}}" /></td>
                                     <td>-2</td>
-                                    <td></td>
+                                    <td><input type="number" name="system.physical_status.deep_wound.amount" value="{{system.physical_status.deep_wound.amount}}" /></td>
                                 </tr>
                                 <tr>
                                     <td>INSTANT DEATH</td>
-                                    <td><input type="checkbox" name="system.physical_status.instant_death.score" {{checked system.physical.injury.instant}} /></td>
-                                    <td></td>
+                                    <td><input type="number" disabled value="{{system.physical_status.instant_death.score}}" /></td>
+                                    <td><input type="number" disabled value="{{system.physical_status.instant_death.armor}}" /></td>
                                     <td>DEAD</td>
-                                    <td></td>
+                                    <td> - </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -154,12 +154,17 @@
             </div>
 
             <!-- System Shock -->
-            <div class="shock-track-section">
-                <div class="section-header">SYSTEM SHOCK</div>
-                <div class="shock-track">
-                    {{#times 20}}
-                    <div class="shock-box {{#if (lt @index system.physical_status.system_shock.active_boxes)}}active{{/if}}" data-index="{{@index}}"></div>
-                    {{/times}}
+            <div class="section-header">SYSTEM SHOCK</div>
+            <div class="shock-track">
+                <div class="shock-bar-container">
+                    <!-- Threshold marker -->
+                    <div class="threshold-marker" style="left: calc({{system.physical_status.system_shock.shock_threshold}} * 5%)">
+                        <span class="threshold-label">Threshold: {{system.physical_status.system_shock.shock_threshold}}</span>
+                    </div>
+                    <!-- Current shock progress -->
+                    <div class="shock-bar" style="width: calc({{system.physical_status.system_shock.current_shock}} * 5%)">
+                        <span class="current-shock-label">{{system.physical_status.system_shock.current_shock}}</span>
+                    </div>
                 </div>
             </div>
         </div>

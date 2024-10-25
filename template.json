@@ -81,9 +81,9 @@
                         "amount": 0
                     },
                     "system_shock": {
-                        "max_boxes": 20,
-                        "active_boxes": 0,
-                        "marked_boxes": []
+                        "max_shock": 20,
+                        "shock_threshold": 0,
+                        "current_shock": 0
                     }
                 }
             },

@@ -20,9 +20,12 @@ export class HeavyGearCharacterSheet extends ActorSheet {
     activateListeners(htmlElement) {
         super.activateListeners(htmlElement);
 
-        // Listener for shock box clicking.
-        htmlElement.find('.shock-box').click(this._onShockBoxClick.bind(this));
+        // We don't actually need this.
+        // htmlElement.find('.shock-box').click(this._onShockBoxClick.bind(this));
     }
+
+/*  A holdover from a first implementation where you would click the system shock boxes to add to it.
+ *  This needs to be taken out the back and shot.
 
     _onShockBoxClick(event) {
         const box = event.currentTarget;
@@ -38,4 +41,5 @@ export class HeavyGearCharacterSheet extends ActorSheet {
             'system.physical_status.system_shock.marked_boxes': newMarks
         });
     }
+*/
 }

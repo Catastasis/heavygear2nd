@@ -130,6 +130,15 @@
     border: 1px solid var(--border-color);
     background: var(--bg-color);
     padding: 1px 3px;
+    
+}
+
+.heavygear2e input[type="text"]:disabled,
+.heavygear2e input[type="number"]:disabled {
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    padding: 1px 3px;
+    background-color: #ccc;
 }
 
 /* Profile Image */
@@ -214,21 +223,10 @@
     border-top: 1px solid var(--border-color);
 }
 
-.heavygear2e .shock-track {
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    gap: 2px;
-}
-
 .heavygear2e .shock-box {
     aspect-ratio: 1;
     border: 1px solid var(--border-color);
-    background: #ccc;  /* Default gray for inactive */
-    cursor: pointer;
-}
-
-.shock-box:hover {
-    border-color: #666;
+    background: #eee;  /* Default gray for inactive */
 }
 
 .shock-box.active {
@@ -239,10 +237,66 @@
     background: red;
 }
 
-/* Gray out inactive boxes */
 .shock-box:not(.active) {
-    cursor: not-allowed;
-    background: #ccc;
+    background: #aaa;
+}
+
+.system-shock-exceeded .section-header {
+    background: #ff0000;
+    animation: pulse 2s infinite;  /* Optional: make it pulse for extra drama */
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.shock-bar-container {
+    position: relative;
+    width: 100%;    /* Full width of container */
+    height: 24px;   /* A bit taller */
+    background: #e0e0e0;  /* Lighter gray for inactive area */
+    border: 1px solid black;
+    margin: 5px 0;  /* Add some vertical spacing */
+}
+
+.shock-bar {
+    height: 100%;
+    background: #ff4444;  /* Slightly softer red */
+    transition: width 0.3s ease;
+}
+
+.threshold-marker {
+    position: absolute;
+    height: 100%;
+    width: 3px;      /* Slightly thicker marker */
+    background: #000;
+    z-index: 1;
+}
+
+.threshold-label {
+    position: absolute;
+    top: 30px;          /* Position above bar */
+    left: 50%;          /* Center on marker */
+    transform: translateX(-50%);  /* Center the text */
+    white-space: nowrap;
+    font-size: 12px;
+    color:red;
+}
+
+.current-shock-label {
+    position: absolute;
+    right: 5px;         /* Slightly inset from end */
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;      /* Make visible against red */
+    font-size: 12px;
+}
+
+.shock-track-section {
+    margin-top: 10px;
+    width: 100%;     /* Make sure section takes full width */
 }
 
 /* Skills Section */
