@@ -16,7 +16,11 @@
                     <div class="profile-img-container">
                         <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
                     </div>
-                </div>
+                    <h1 class="charname">{{actor.name}}</h1>
+                    <button class="toggle-edit" title="Toggle Edit Mode">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                    </div>
             
                 <div class="personal-info">
                     <div class="section-header">PERSONAL IDENTIFICATION</div>
@@ -44,9 +48,6 @@
             <!-- Stats Section: Attributes and Status -->
             <div class="stats-section">
                 <!-- Left Column: Attributes and Secondary Traits -->
-                <button class="roll-test">
-                    Test Roll (2d6)
-                </button>
                 <div class="attributes-column">
                     <!-- Primary Attributes -->
                     <div class="attributes-section">
@@ -54,33 +55,33 @@
                         <div class="attributes-grid">
                             <!-- First Row Attributes -->
                             <div class="attribute-group">
-                                <label>AGI</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="AGI">AGI</label>
                                 <input type="number" name="system.attributes.AGI.value" value="{{system.attributes.AGI.value}}" />
-                                <label>INF</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="INF">INF</label>
                                 <input type="number" name="system.attributes.INF.value" value="{{system.attributes.INF.value}}" />
                             </div>
                             <div class="attribute-group">
-                                <label>APP</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="APP">APP</label>
                                 <input type="number" name="system.attributes.APP.value" value="{{system.attributes.APP.value}}" />
-                                <label>KNO</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="KNO">KNO</label>
                                 <input type="number" name="system.attributes.KNO.value" value="{{system.attributes.KNO.value}}" />
                             </div>
                             <div class="attribute-group">
-                                <label>BLD</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="BLD">BLD</label>
                                 <input type="number" name="system.attributes.BLD.value" value="{{system.attributes.BLD.value}}" />
-                                <label>PER</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="PER">PER</label>
                                 <input type="number" name="system.attributes.PER.value" value="{{system.attributes.PER.value}}" />
                             </div>
                             <div class="attribute-group">
-                                <label>CRE</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="CRE">CRE</label>
                                 <input type="number" name="system.attributes.CRE.value" value="{{system.attributes.CRE.value}}" />
-                                <label>PSY</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="PSY">PSY</label>
                                 <input type="number" name="system.attributes.PSY.value" value="{{system.attributes.PSY.value}}" />
                             </div>
                             <div class="attribute-group">
-                                <label>FIT</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="FIT">FIT</label>
                                 <input type="number" name="system.attributes.FIT.value" value="{{system.attributes.FIT.value}}" />
-                                <label>WIL</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="WIL">WIL</label>
                                 <input type="number" name="system.attributes.WIL.value" value="{{system.attributes.WIL.value}}" />
                             </div>
                         </div>
@@ -91,11 +92,11 @@
                         <div class="section-header">SECONDARY TRAITS</div>
                         <div class="attributes-grid">
                             <div class="attribute-group">
-                                <label>STR</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="STR">STR</label>
                                 <input type="number" disabled name="system.secondary_traits.STR.value" value="{{system.secondary_traits.STR.value}}" />
                             </div>
                             <div class="attribute-group">
-                                <label>HEA</label>
+                                <label class="rollable" data-roll-type="attribute" data-attribute="HEA">HEA</label>
                                 <input type="number" disabled name="system.secondary_traits.HEA.value" value="{{system.secondary_traits.HEA.value}}" />
                             </div>
                             <div class="attribute-group">

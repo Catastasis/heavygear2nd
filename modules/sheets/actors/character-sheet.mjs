@@ -5,8 +5,8 @@ export class HeavyGearCharacterSheet extends ActorSheet {
         return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["heavygear2e", "sheet", "actor"],
             template: "systems/heavygear2e/templates/actors/character-sheet.html",
-            width: 700,
-            height: 700
+            width: 800,
+            height: 800
         })
     }
 
@@ -26,7 +26,29 @@ export class HeavyGearCharacterSheet extends ActorSheet {
 
     activateListeners(html) {
         super.activateListeners(html);
+
+        html.find('.rollable').click(async (ev) => {
+            const element = ev.currentTarget;
+            const rollType = element.dataset.rollType;
+            const attribute = element.dataset.attribute;
+            
+            if (rollType === "attribute") {
+                const value = this.getAttributeValue(attribute);
+                const roll = new HeavyGearRollEngine(
+                    2,              // Always 2 dice for raw attribute rolls
+                    value,          // Attribute value
+                    5,              // Hardcoded threshold for test values.
+                    `${attribute} Roll` // Label
+                );
+                await roll.evaluate();
+                await roll.toMessage({
+                    speaker: ChatMessage.getSpeaker({ actor: this.actor })
+                });
+            }
+        });
+
         // Test implementation of the roll mechanic. Still missing the fumble logic.
+        /* Deprecated test call.
         html.find('.roll-test').click(async (ev) => {
             const roll = new HeavyGearRollEngine(
                 2,              // skill
@@ -40,5 +62,18 @@ export class HeavyGearCharacterSheet extends ActorSheet {
                 speaker: ChatMessage.getSpeaker({ actor: this.actor })
             });
         });
+        */
+    }
+
+    getAttributeValue(attribute) {
+        // Check primary attributes first
+        if (this.actor.system.attributes[attribute]) {
+            return this.actor.system.attributes[attribute].value;
+        }
+        // Then check secondary
+        if (this.actor.system.secondary_traits[attribute]) {
+            return this.actor.system.secondary_traits[attribute].value;
+        }
+        return 0;
     }
 }

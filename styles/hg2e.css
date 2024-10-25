@@ -9,8 +9,8 @@
 }
 
 .heavygear2e.sheet.actor {
-    min-width: 700px;
-    min-height: 700px;
+    min-width: 800px;
+    min-height: 800px;
 }
 
 .heavygear2e .window-content {
@@ -438,4 +438,8 @@
 .heavygear-roll .success-line.failure {
     background: #f44336;
     color: white;
+}
+
+.rollable {
+    background: lightgoldenrodyellow
 }
