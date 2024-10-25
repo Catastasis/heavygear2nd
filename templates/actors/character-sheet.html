@@ -44,6 +44,9 @@
             <!-- Stats Section: Attributes and Status -->
             <div class="stats-section">
                 <!-- Left Column: Attributes and Secondary Traits -->
+                <button class="roll-test">
+                    Test Roll (2d6)
+                </button>
                 <div class="attributes-column">
                     <!-- Primary Attributes -->
                     <div class="attributes-section">
@@ -158,11 +161,11 @@
             <div class="shock-track">
                 <div class="shock-bar-container">
                     <!-- Threshold marker -->
-                    <div class="threshold-marker" style="left: calc({{system.physical_status.system_shock.shock_threshold}} * 5%)">
+                    <div class="threshold-marker" style="left: {{shockThresholdPosition}}">
                         <span class="threshold-label">Threshold: {{system.physical_status.system_shock.shock_threshold}}</span>
                     </div>
                     <!-- Current shock progress -->
-                    <div class="shock-bar" style="width: calc({{system.physical_status.system_shock.current_shock}} * 5%)">
+                    <div class="shock-bar" style="width: {{currentShockWidth}}">
                         <span class="current-shock-label">{{system.physical_status.system_shock.current_shock}}</span>
                     </div>
                 </div>

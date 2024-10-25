@@ -1,0 +1,39 @@
+<!-- templates/chat/roll.html -->
+<div class="heavygear-roll">
+    {{#if options.label}}
+    <h3>{{options.label}}</h3>
+    {{/if}}
+    
+    <div class="dice-pool">
+        <!-- Show all dice in pool -->
+        {{#each terms.[0].results as |die|}}
+            <span class="die d6 {{#if (eq die.result 6)}}six{{/if}} {{#if (eq die.result ../options.highest)}}highest{{/if}}">
+                {{die.result}}
+            </span>
+        {{/each}}
+    </div>
+
+    <div class="roll-details">
+        <div class="result-line">
+            <span>Highest Die:</span>
+            <span>{{options.highest}}</span>
+        </div>
+        <div class="result-line">
+            <span>Attribute Bonus:</span>
+            <span>+{{options.attribute}}</span>
+        </div>
+        {{#if options.sixBonus}}
+        <div class="result-line">
+            <span>Additional 6s:</span>
+            <span>+{{options.sixBonus}}</span>
+        </div>
+        {{/if}}
+        <div class="total-line">
+            <span>Total:</span>
+            <span>{{options.total}} vs {{options.threshold}}</span>
+        </div>
+        <div class="success-line {{#if options.success}}success{{else}}failure{{/if}}">
+            {{#if options.success}}Success!{{else}}Failure{{/if}}
+        </div>
+    </div>
+</div>

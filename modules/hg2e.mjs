@@ -8,6 +8,7 @@ import { HeavyGearCharacterSheet } from "./sheets/actors/character-sheet.mjs";
 import { HeavyGearItemSheet } from "./sheets/items/item-sheet.mjs";
 // import { HEAVYGEAR } from "./helpers/config.mjs";
 import { registerHandlebarsHelpers } from "./helpers/handlebars.mjs"
+import { HeavyGearRollEngine } from "./helpers/roll-engine.mjs"
 
 // Hook into the system initialization to override some settings.
 Hooks.once('init', function() {
@@ -47,6 +48,10 @@ Hooks.once('init', function() {
         makeDefault: true,
         label: "HEAVYGEAR.SheetLabels.Item",
     });
+
+    // Get our roll engine nice and prepped.
+    CONFIG.Dice.rolls.push(HeavyGearRollEngine);
+
     console.log("hg2e | Item sheets configured.");
     console.log("hg2e | Reactor online. Sensors online. Weapons online. All systems nominal.");
 });

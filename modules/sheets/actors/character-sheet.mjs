@@ -1,3 +1,5 @@
+import { HeavyGearRollEngine } from "/systems/heavygear2e/modules/helpers/roll-engine.mjs";
+
 export class HeavyGearCharacterSheet extends ActorSheet {
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
@@ -14,32 +16,29 @@ export class HeavyGearCharacterSheet extends ActorSheet {
         context.system = this.actor.system;
         context.flags = this.actor.flags;
 
+        context.shockThresholdPosition = 
+        (context.system.physical_status.system_shock.shock_threshold * 5) + '%';
+        context.currentShockWidth = 
+        (context.system.physical_status.system_shock.current_shock * 5) + '%';
+
         return context;
     }
 
-    activateListeners(htmlElement) {
-        super.activateListeners(htmlElement);
-
-        // We don't actually need this.
-        // htmlElement.find('.shock-box').click(this._onShockBoxClick.bind(this));
-    }
-
-/*  A holdover from a first implementation where you would click the system shock boxes to add to it.
- *  This needs to be taken out the back and shot.
-
-    _onShockBoxClick(event) {
-        const box = event.currentTarget;
-        const index = box.dataset.index;
-
-        // Get current marks array or initialize it
-        const marks = this.actor.system.physical_status.system_shock.marked_boxes || [];
-        const newMarks = [... marks];
-        newMarks[index] = !newMarks[index];
-
-        // Update the actor
-        this.actor.update({
-            'system.physical_status.system_shock.marked_boxes': newMarks
+    activateListeners(html) {
+        super.activateListeners(html);
+        // Test implementation of the roll mechanic. Still missing the fumble logic.
+        html.find('.roll-test').click(async (ev) => {
+            const roll = new HeavyGearRollEngine(
+                2,              // skill
+                3,              // attribute
+                5,              // threshold
+                "Test Roll"     // label
+            );
+            
+            await roll.evaluate();
+            await roll.toMessage({
+                speaker: ChatMessage.getSpeaker({ actor: this.actor })
+            });
         });
     }
-*/
 }
