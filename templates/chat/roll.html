@@ -28,6 +28,12 @@
             <span>+{{options.sixBonus}}</span>
         </div>
         {{/if}}
+        {{#if options.woundPenalty}}
+        <div class="result-line-bad">
+            <span>Wound Penalty:</span>
+            <span>-{{options.woundPenalty}}</span>
+        </div>
+        {{/if}}
         <div class="total-line">
             <span>Total:</span>
             <span>{{options.total}} vs {{options.threshold}}</span>

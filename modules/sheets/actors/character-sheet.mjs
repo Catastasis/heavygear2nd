@@ -46,12 +46,15 @@ export class HeavyGearCharacterSheet extends ActorSheet {
                 
                 if (rollType === "attribute") {
                     const value = this.getAttributeValue(attribute);
+                    const woundPenalty = this.getCurrentWoundPenalty();
                     const roll = new HeavyGearRollEngine(
                         2,              // Always 2 dice for raw attribute rolls
                         value,          // Attribute value
                         5,              // Hardcoded threshold for test values.
+                        woundPenalty,
                         `${attribute} Roll` // Label
                     );
+                    console.log("hg2e | Roll contents:"+ roll);
                     await roll.evaluate();
                     await roll.toMessage({
                         speaker: ChatMessage.getSpeaker({ actor: this.actor })
@@ -71,5 +74,9 @@ export class HeavyGearCharacterSheet extends ActorSheet {
             return this.actor.system.secondary_traits[attribute].value;
         }
         return 0;
+    }
+
+    getCurrentWoundPenalty() {
+        return this.actor.system.physical_status.system_shock.current_shock;
     }
 }

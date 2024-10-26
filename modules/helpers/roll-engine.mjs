@@ -1,11 +1,12 @@
 export class HeavyGearRollEngine extends Roll {
-    constructor(skill, attribute, threshold, label = "Unlabeled Roll") {
+    constructor(skill, attribute, threshold, woundPenalty = 0, label = "Unlabeled Roll") {
         super(`${skill}d6kh1 + @attribute`, { attribute });
         
         this.options = {
             label,
             attribute,
-            threshold
+            threshold,
+            woundPenalty
         };
     }
 
@@ -17,13 +18,13 @@ export class HeavyGearRollEngine extends Roll {
         const highest = Math.max(...results.map(d => d.result));
         const numSixes = results.filter(d => d.result === 6).length;
         const sixBonus = Math.max(0, numSixes - 1);
-        const total = this.total + sixBonus;
+        const total = this.total + sixBonus - this.options.woundPenalty;
         
         // Store in options for template access
         this.options.highest = highest;
         this.options.sixBonus = sixBonus;
         this.options.total = total;
-        this.options.success = total >= this.options.threshold;
+        this.options.success = total >= this.options.threshold; 
         
         return this;
     }
