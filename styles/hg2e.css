@@ -190,6 +190,43 @@
     padding-top: 2px;
 }
 
+.attribute-pair {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.attribute-label {
+    font-weight: bold;
+}
+
+.attribute-input input {
+    width: 40px;
+    text-align: center;
+}
+
+.locked .attribute-pair.rollable:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.locked .attribute-pair {
+    cursor: pointer;
+}
+
+.locked .attribute-pair:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+
+.locked .attribute-pair input {
+    pointer-events: none;
+    background: transparent;
+    border-color: transparent;
+}
+
 /* Tables */
 .heavygear2e table {
     width: 100%;
