@@ -10,7 +10,7 @@
 
 .heavygear2e.sheet.actor {
     min-width: 800px;
-    min-height: 800px;
+    min-height: 700px;
 }
 
 .heavygear2e .window-content {
@@ -197,34 +197,33 @@
     gap: 2px;
 }
 
-.attribute-label {
+.attribute-label,
+.attribute-label-rollable {
     font-weight: bold;
 }
+
+.attribute-label-rollable {
+    cursor:pointer;
+}
+
 
 .attribute-input input {
     width: 40px;
     text-align: center;
 }
 
-.locked .attribute-pair.rollable:hover {
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 3px;
-    cursor: pointer;
+.attribute-input input[disabled]:not(.rollable) {
+    background-color: #ccc;
 }
 
-.locked .attribute-pair {
-    cursor: pointer;
+.attribute-pair.rollable input[disabled] {
+    background-color: #e8f4ff;  /* Light blue to suggest interactivity */
+    border-color: #4a90e2;
 }
 
-.locked .attribute-pair:hover {
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 3px;
-}
-
-.locked .attribute-pair input {
-    pointer-events: none;
-    background: transparent;
-    border-color: transparent;
+.attribute-input input:not([disabled]) {
+    background-color: white;
+    cursor: text;
 }
 
 /* Tables */

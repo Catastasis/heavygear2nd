@@ -11,7 +11,7 @@ export class HeavyGearCharacterSheet extends ActorSheet {
             classes: ["heavygear2e", "sheet", "actor"],
             template: "systems/heavygear2e/templates/actors/character-sheet.html",
             width: 800,
-            height: 800
+            height: 700
         })
     }
 
