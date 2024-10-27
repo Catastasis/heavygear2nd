@@ -31,6 +31,7 @@ export class HeavyGearActor extends Actor {
         const PSY = systemData.attributes.PSY.value || 0;
         const WIL = systemData.attributes.WIL.value || 0;
         // This is kind of a happy accident. In effect, the shock we calculate for the bar is the same as the character's wound penalty.
+        // Currently we fetch the woundPenalty in the character-sheet.mjs file, which is not very good!
         const woundPenalty = systemData.physical_status.current_shock || 0; 
 
         // Secondary traits

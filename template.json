@@ -85,6 +85,304 @@
                         "shock_threshold": 0,
                         "current_shock": 0
                     }
+                },
+                "skills": {
+                    "acrobatics": {
+                    "level": 0,
+                    "specializations": []
+                    },
+                    "aircraftPilot": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "animalHandling": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "archery": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "athletics": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "bureaucracy": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "business": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "camouflage": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "combatSense": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "communications": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "computer": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "cooking": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "craftSpecific": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "dance": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "demolition": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "disguise": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "dodge": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "drive": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "earthSciences": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "electronicDesign": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "electronicWarfare": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "electronics": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "etiquette": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "firstAid": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "foreignLanguage": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "forgery": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "forwardObserving": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "gHandling": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "gambling": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "gunnerySpecific": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "haggling": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "handToHand": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "heavyGearArchitecture": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "heavyGearPilot": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "heavyWeapons": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "humanPerception": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "interrogation": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "intimidate": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "investigation": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "law": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "leadership": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "lifeSciences": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "literature": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "mechanicalDesign": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "mechanics": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "medicine": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "melee": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "music": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "navalPilot": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "navigationSpecific": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "notice": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "parachuting": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "physicalSciences": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "psychology": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "riding": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "security": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "seduction": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "sleightOfHand": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "smallArms": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "sniping": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "socialSciences": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "spacePilot": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "stealth": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "streetwise": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "striderPilot": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "survival": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "swimming": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "tactics": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "teaching": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "theatrics": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "throwing": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "tinker": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "visualArt": {
+                        "level": 0,
+                        "specializations": []
+                    },
+                    "zeroG": {
+                        "level": 0,
+                        "specializations": []
+                    }
                 }
             },
             "tactical": {

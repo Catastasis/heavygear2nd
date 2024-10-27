@@ -1,14 +1,16 @@
-<form class="{{cssClass}} flexcol {{#unless isEditing}}locked{{/unless}}" autocomplete="off">
+<form class="{{cssClass}} flexcol   " autocomplete="off">
+
     <!-- Tab Navigation -->
-    <nav class="sheet-tabs tabs">
-        <a class="item active" data-tab="character">Character</a>
-        <a class="item" data-tab="combat">Combat</a>
-        <a class="item" data-tab="equipment">Equipment</a>
+    <nav class="sheet-tabs tabs" data-group="primary-tabs">
+        <a class="item" data-tab="character" data-group="primary-tabs">Character</a>
+        <a class="item" data-tab="skills" data-group="primary-tabs">Skills</a>
+        <a class="item" data-tab="combat" data-group="primary-tabs">Combat</a>
+        <a class="item" data-tab="equipment" data-group="primary-tabs">Equipment</a>
     </nav>
 
     <div class="sheet-grid">
         <!-- Character Tab -->
-        <div class="tab active" data-tab="character">
+        <div class="tab" data-group="primary-tabs" data-tab="character">
             <!-- Header Section: Picture and Personal Info -->
             <div class="header-section">
                 <div class="profile-section">
@@ -240,6 +242,35 @@
                 </div>
             </div>
             -->
+        </div>
+
+        <div class="tab" data-group="primary-tabs" data-tab="skills">
+            <p> Test. </p>
+            {{#each skillGroups as |skillGroup attribute|}}
+            <div class="skill-group">
+                <div class="section-header">{{attribute}} SKILLS</div>
+                <table class="skills-table">
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Level</th>
+                            <th>Complexity</th>
+                            <th>Specializations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each skillGroup as |skill skillId|}}
+                        <tr class="skill {{#if skill.isComplex}}complex{{/if}} {{#if (eq skill.level 0)}}untrained{{/if}}">
+                            <td class="skill-name">{{skill.name}}</td>
+                            <td class="skill-level"><input type="number" name="system.skills.{{skillId}}.level" value="{{skill.level}}" /></td>
+                            <td class="skill-complexity">{{#if skill.isComplex}}Complex{{else}}Simple{{/if}}</td>
+                            <td class="skill-specs">{{#each skill.defaultSpecs}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            {{/each}}
         </div>
 
         <!-- Combat Tab -->
