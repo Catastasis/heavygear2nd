@@ -1,13 +1,29 @@
-/* Base Variables and Sheet Layout */
-.heavygear2e {
+/* ==========================================================================
+   Base Variables and Colors
+   ========================================================================== */
+   .heavygear2e {
     --border-color: #000;
     --bg-color: #fff;
     --text-color: #000;
     --text-color-dim: #666;
     --section-spacing: 1rem;
     --input-height: 24px;
+    
+    /* Interactive States */
+    --rollable-bg: #e8f4ff;
+    --rollable-hover: #d0e8ff;
+    --rollable-border: #4a90e2;
+    --computed-bg: #ccc;
+    
+    /* Status Colors */
+    /* These are broken for now. SHRUGGO. */
+    --success-color: #4CAF50;
+    --failure-color: #f44336;
 }
 
+/* ==========================================================================
+   Sheet Layout and Base Styles
+   ========================================================================== */
 .heavygear2e.sheet.actor {
     min-width: 800px;
     min-height: 700px;
@@ -24,10 +40,12 @@
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-    overflow: hidden;  /* Prevent form overflow */
+    overflow: hidden;
 }
 
-/* Tab Navigation */
+/* ==========================================================================
+   Tab Navigation
+   ========================================================================== */
 .heavygear2e .sheet-tabs {
     flex: 0 0 40px;
     width: 100%;
@@ -35,17 +53,6 @@
     margin-bottom: var(--section-spacing);
     padding: 0 5px;
     box-sizing: border-box;
-}
-
-.heavygear2e .sheet-tabs .item:hover {
-    background: rgba(0, 0, 0, 0.2);
-    text-shadow: none;
-}
-
-.heavygear2e .tab {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 5px;
 }
 
 .heavygear2e .sheet-tabs .item {
@@ -58,12 +65,25 @@
     white-space: nowrap;
 }
 
+.heavygear2e .sheet-tabs .item:hover {
+    background: rgba(0, 0, 0, 0.2);
+    text-shadow: none;
+}
+
 .heavygear2e .sheet-tabs .item.active {
     background: var(--border-color);
     color: var(--bg-color);
 }
 
-/* Section Headers */
+.heavygear2e .tab {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+
+/* ==========================================================================
+   Section Headers
+   ========================================================================== */
 .heavygear2e .section-header {
     background: var(--border-color);
     color: var(--bg-color);
@@ -73,14 +93,16 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Grid Layouts */
+/* ==========================================================================
+   Grid Layouts
+   ========================================================================== */
 .heavygear2e .sheet-grid {
     flex: 1;
     overflow-y: auto;
-    overflow-x: hidden;  /* Prevent horizontal scroll */
+    overflow-x: hidden;
     width: 100%;
     box-sizing: border-box;
-    padding: 0 5px;     /* Add some padding instead of letting content touch edges */
+    padding: 0 5px;
 }
 
 .heavygear2e .header-section {
@@ -96,14 +118,16 @@
     gap: var(--section-spacing);
 }
 
-/* Form Elements */
+/* ==========================================================================
+   Form Elements
+   ========================================================================== */
 .heavygear2e .form-group {
     display: flex;
     align-items: center;
     margin: 2px 0;
     width: 100%;
     box-sizing: border-box;
-    padding-right: 10px; /* Add padding to prevent edge collision */
+    padding-right: 10px;
 }
 
 .heavygear2e .form-group label {
@@ -111,15 +135,15 @@
     font-weight: bold;
     text-align: right;
     padding-right: 1%;
-    white-space: nowrap;  /* Prevent label wrapping */
+    white-space: nowrap;
 }
 
 .heavygear2e .form-group input {
     flex: 1;
-    min-width: 0;        /* This is crucial for flex items */
-    width: 100%;         /* Force width containment */
-    max-width: 100%;     /* Prevent overflow */
-    margin-right: 0;     /* Remove right margin */
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
     height: var(--input-height);
     box-sizing: border-box;
     padding: 1px 3px;
@@ -130,18 +154,17 @@
     border: 1px solid var(--border-color);
     background: var(--bg-color);
     padding: 1px 3px;
-    
 }
 
 .heavygear2e input[type="text"]:disabled,
 .heavygear2e input[type="number"]:disabled {
+    background: var(--computed-bg);
     border: 1px solid var(--border-color);
-    background: var(--bg-color);
-    padding: 1px 3px;
-    background-color: #ccc;
 }
 
-/* Profile Image */
+/* ==========================================================================
+   Profile Image
+   ========================================================================== */
 .heavygear2e .profile-img-container {
     width: 100%;
     height: 200px;
@@ -154,7 +177,9 @@
     object-fit: contain;
 }
 
-/* Attributes and Traits */
+/* ==========================================================================
+   Attributes and Traits
+   ========================================================================== */
 .heavygear2e .attributes-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -169,32 +194,12 @@
     gap: 2px;
 }
 
-.heavygear2e .attribute-group label {
-    font-weight: bold;
-    text-align: center;
-}
-
-.heavygear2e .attribute-group input {
-    width: 40px;
-    text-align: center;
-}
-
-.heavygear2e .attribute-group input:disabled {
-    width: 40px;
-    text-align: center;
-    background-color: #ccc;
-}
-
-.heavygear2e .secondary-trait {
-    margin-top: 2px;
-    padding-top: 2px;
-}
-
 .attribute-pair {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2px;
+    padding: 2px;
 }
 
 .attribute-label,
@@ -203,30 +208,26 @@
 }
 
 .attribute-label-rollable {
-    cursor:pointer;
+    cursor: pointer;
 }
-
 
 .attribute-input input {
     width: 40px;
     text-align: center;
 }
 
-.attribute-input input[disabled]:not(.rollable) {
-    background-color: #ccc;
-}
-
 .attribute-pair.rollable input[disabled] {
-    background-color: #e8f4ff;  /* Light blue to suggest interactivity */
-    border-color: #4a90e2;
+    background: var(--rollable-bg);
+    border-color: var(--rollable-border);
 }
 
-.attribute-input input:not([disabled]) {
-    background-color: white;
-    cursor: text;
+.attribute-pair.rollable:hover input[disabled] {
+    background: var(--rollable-hover);
 }
 
-/* Tables */
+/* ==========================================================================
+   Status Section
+   ========================================================================== */
 .heavygear2e table {
     width: 100%;
     border-collapse: collapse;
@@ -245,174 +246,116 @@
     color: var(--bg-color);
 }
 
-/* Status Section */
-.heavygear2e .status-section table {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-/* System Shock */
-.heavygear2e .system-shock {
-    grid-column: span 2;
-    margin-top: var(--section-spacing);
-    padding-top: var(--section-spacing);
-    border-top: 1px solid var(--border-color);
-}
-
-.heavygear2e .shock-box {
-    aspect-ratio: 1;
-    border: 1px solid var(--border-color);
-    background: #eee;  /* Default gray for inactive */
-}
-
-.shock-box.active {
-    background: white;
-}
-
-.shock-box.marked {
-    background: red;
-}
-
-.shock-box:not(.active) {
-    background: #aaa;
-}
-
-.system-shock-exceeded .section-header {
-    background: #ff0000;
-    animation: pulse 2s infinite;  /* Optional: make it pulse for extra drama */
-}
-
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.7; }
-    100% { opacity: 1; }
-}
-
+/* ==========================================================================
+   System Shock Bar
+   ========================================================================== */
 .shock-bar-container {
     position: relative;
-    width: 100%;    /* Full width of container */
-    height: 24px;   /* A bit taller */
-    background: #e0e0e0;  /* Lighter gray for inactive area */
-    border: 1px solid black;
-    margin: 5px 0;  /* Add some vertical spacing */
+    width: 100%;
+    height: 24px;
+    background: #e0e0e0;
+    border: 1px solid var(--border-color);
+    margin: 5px 0;
 }
 
 .shock-bar {
     height: 100%;
-    background: #ff4444;  /* Slightly softer red */
+    background: var(--failure-color);
     transition: width 0.3s ease;
 }
 
 .threshold-marker {
     position: absolute;
     height: 100%;
-    width: 3px;      /* Slightly thicker marker */
-    background: #000;
+    width: 3px;
+    background: var(--border-color);
     z-index: 1;
 }
 
 .threshold-label {
     position: absolute;
-    top: 30px;          /* Position above bar */
-    left: 50%;          /* Center on marker */
-    transform: translateX(-50%);  /* Center the text */
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     white-space: nowrap;
     font-size: 14px;
-    color:black;
 }
 
 .current-shock-label {
     position: absolute;
-    right: 5px;         /* Slightly inset from end */
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
-    color: black;      /* Make visible against red */
     font-size: 12px;
 }
 
-.shock-track-section {
-    margin-top: 10px;
-    width: 100%;     /* Make sure section takes full width */
+/* ==========================================================================
+   Skills Tab Styling
+   ========================================================================== */
+/* Skills container layout */
+.heavygear2e .tab[data-tab="skills"] {
+    height: 100%;
+    overflow-y: auto;
 }
 
-/* Skills Section */
-.heavygear2e .skills-grid {
-    column-count: 2;
-    column-gap: 10px;
+.heavygear2e .skills-groups-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
 }
 
 .heavygear2e .skill-group {
-    break-inside: avoid;
     margin-bottom: 10px;
-    display: inline-block;
+}
+
+/* Skills table styling */
+.heavygear2e .skills-table {
     width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
 }
 
-.heavygear2e .skill-group-header {
-    background: var(--border-color);
-    color: var(--bg-color);
-    padding: 2px 5px;
-    font-size: 0.9em;
-    font-weight: bold;
-}
-
-/* Skill Entries */
-.heavygear2e .skill {
-    border: 1px solid var(--border-color);
-}
-
-.heavygear2e .skill:not(.trained) {
-    color: var(--text-color-dim);
-}
-
-.heavygear2e .skill:not(.trained) input {
-    color: var(--text-color-dim);
-    background: #f5f5f5;
-}
-
-.heavygear2e .skill.trained {
-    color: var(--text-color);
-}
-
-.heavygear2e .skill.trained input {
-    color: var(--text-color);
-    background: var(--bg-color);
-}
-
-.heavygear2e .skill:hover {
-    background: #f0f0f0;
-    cursor: pointer;
-}
-
-/* Skill Table Layout */
-.heavygear2e .skill-name {
-    width: 60%;
+.heavygear2e .skills-table th,
+.heavygear2e .skills-table td {
     padding: 2px 4px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    vertical-align: middle;
 }
 
-.heavygear2e .skill-complexity {
-    width: 30px;
+/* Column widths */
+.heavygear2e .skills-table .skill-name {
+    width: 20%;
+}
+
+.heavygear2e .skills-table .skill-level {
+    width: 50px;
     text-align: center;
 }
 
-.heavygear2e .skill-level,
-.heavygear2e .skill-mod {
-    width: 15%;
+.heavygear2e .skills-table .skill-complexity {
+    width: 70px;
+    text-align: center;
 }
 
-.heavygear2e .skill-level input,
-.heavygear2e .skill-mod input {
-    width: 40px;
+.heavygear2e .skills-table .skill-specs {
+    font-size: 0.9em;
+    padding-left: 4px;
 }
 
-/* Description Area */
-.heavygear2e .description textarea {
-    width: 100%;
-    min-height: 100px;
-    resize: vertical;
+/* Skill states */
+.heavygear2e .skills-table tr.skill.complex {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Roll Stuff */
+.heavygear2e .skills-table tr.skill.untrained {
+    color: var(--text-color-dim);
+}
+
+/* ==========================================================================
+   Roll Results Styling
+   ========================================================================== */
 .heavygear-roll {
     background: white;
     border: 1px solid #000;
@@ -429,7 +372,7 @@
 .heavygear-roll .die {
     width: 24px;
     height: 24px;
-    border: 1px solid #000;
+    border: 2px solid #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -442,7 +385,7 @@
 }
 
 .heavygear-roll .die.highest {
-    border: 2px solid #4CAF50;
+    border: 2px solid green;
 }
 
 .heavygear-roll .result-line {
@@ -474,15 +417,11 @@
 }
 
 .heavygear-roll .success-line.success {
-    background: #4CAF50;
+    background: green;
     color: white;
 }
 
 .heavygear-roll .success-line.failure {
-    background: #f44336;
+    background: red;
     color: white;
-}
-
-.rollable {
-    background: lightgoldenrodyellow
 }

@@ -1,16 +1,15 @@
-<form class="{{cssClass}} flexcol   " autocomplete="off">
-
+<form class="{{cssClass}} flexcol" autocomplete="off">
     <!-- Tab Navigation -->
-    <nav class="sheet-tabs tabs" data-group="primary-tabs">
-        <a class="item" data-tab="character" data-group="primary-tabs">Character</a>
-        <a class="item" data-tab="skills" data-group="primary-tabs">Skills</a>
-        <a class="item" data-tab="combat" data-group="primary-tabs">Combat</a>
-        <a class="item" data-tab="equipment" data-group="primary-tabs">Equipment</a>
+    <nav class="sheet-tabs tabs">
+        <a class="item" data-tab="character">Character</a>
+        <a class="item" data-tab="skills">Skills</a>
+        <a class="item" data-tab="combat">Combat</a>
+        <a class="item" data-tab="equipment">Equipment</a>
     </nav>
 
     <div class="sheet-grid">
         <!-- Character Tab -->
-        <div class="tab" data-group="primary-tabs" data-tab="character">
+        <div class="tab" data-tab="character">
             <!-- Header Section: Picture and Personal Info -->
             <div class="header-section">
                 <div class="profile-section">
@@ -19,7 +18,7 @@
                         <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
                     </div>
                     <h1 style="align-content: center;" class="charname">{{actor.name}}</h1>
-                    </div>
+                </div>
             
                 <div class="personal-info">
                     <div class="section-header">PERSONAL IDENTIFICATION</div>
@@ -56,13 +55,13 @@
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="AGI">
                                     <div class="attribute-label-rollable">AGI</div>
                                     <div class="attribute-input">
-                                        <input type="number" name="system.attributes.AGI.value" value="{{system.attributes.AGI.value}}"  />
+                                        <input type="number" name="system.attributes.AGI.value" value="{{system.attributes.AGI.value}}" />
                                     </div>
                                 </div>
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="INF">
                                     <div class="attribute-label-rollable">INF</div>
                                     <div class="attribute-input">
-                                        <input type="number" name="system.attributes.INF.value" value="{{system.attributes.INF.value}}"  />
+                                        <input type="number" name="system.attributes.INF.value" value="{{system.attributes.INF.value}}" />
                                     </div>
                                 </div>
                             </div>
@@ -70,13 +69,13 @@
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="APP">
                                     <div class="attribute-label-rollable">APP</div>
                                     <div class="attribute-input">
-                                        <input type="number" name="system.attributes.APP.value" value="{{system.attributes.APP.value}}"  />
+                                        <input type="number" name="system.attributes.APP.value" value="{{system.attributes.APP.value}}" />
                                     </div>
                                 </div>
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="KNO">
                                     <div class="attribute-label-rollable">KNO</div>
                                     <div class="attribute-input">
-                                        <input type="number" name="system.attributes.KNO.value" value="{{system.attributes.KNO.value}}"  />
+                                        <input type="number" name="system.attributes.KNO.value" value="{{system.attributes.KNO.value}}" />
                                     </div>
                                 </div>
                             </div>
@@ -84,13 +83,13 @@
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="BLD">
                                     <div class="attribute-label-rollable">BLD</div>
                                     <div class="attribute-input">
-                                        <input type="number" name="system.attributes.BLD.value" value="{{system.attributes.BLD.value}}"  />
+                                        <input type="number" name="system.attributes.BLD.value" value="{{system.attributes.BLD.value}}" />
                                     </div>
                                 </div>
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="PER">
                                     <div class="attribute-label-rollable">PER</div>
                                     <div class="attribute-input">
-                                        <input type="number" name="system.attributes.PER.value" value="{{system.attributes.PER.value}}"  />
+                                        <input type="number" name="system.attributes.PER.value" value="{{system.attributes.PER.value}}" />
                                     </div>
                                 </div>
                             </div>
@@ -98,13 +97,13 @@
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="CRE">
                                     <div class="attribute-label-rollable">CRE</div>
                                     <div class="attribute-input">
-                                        <input type="number" name="system.attributes.CRE.value" value="{{system.attributes.CRE.value}}"  />
+                                        <input type="number" name="system.attributes.CRE.value" value="{{system.attributes.CRE.value}}" />
                                     </div>
                                 </div>
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="PSY">
                                     <div class="attribute-label-rollable">PSY</div>
                                     <div class="attribute-input">
-                                        <input type="number" name="system.attributes.PSY.value" value="{{system.attributes.PSY.value}}"  />
+                                        <input type="number" name="system.attributes.PSY.value" value="{{system.attributes.PSY.value}}" />
                                     </div>
                                 </div>
                             </div>
@@ -112,25 +111,24 @@
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="FIT">
                                     <div class="attribute-label-rollable">FIT</div>
                                     <div class="attribute-input">
-                                        <input type="number" name="system.attributes.FIT.value" value="{{system.attributes.FIT.value}}"  />
+                                        <input type="number" name="system.attributes.FIT.value" value="{{system.attributes.FIT.value}}" />
                                     </div>
                                 </div>
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="WIL">
                                     <div class="attribute-label-rollable">WIL</div>
                                     <div class="attribute-input">
-                                        <input type="number" name="system.attributes.WIL.value" value="{{system.attributes.WIL.value}}"  />
+                                        <input type="number" name="system.attributes.WIL.value" value="{{system.attributes.WIL.value}}" />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                     </div>
+                    </div>
                      
-                     <!-- Secondary Traits -->
-                     <div class="secondary-section">
+                    <!-- Secondary Traits -->
+                    <div class="secondary-section">
                         <div class="section-header">SECONDARY TRAITS</div>
                         <div class="attributes-grid">
                             <div class="attribute-group">
-                                <!-- The inputs here are disabled since we don't input secondary attributes. -->
                                 <div class="attribute-pair rollable" data-roll-type="attribute" data-attribute="STR">
                                     <div class="attribute-label-rollable">STR</div>
                                     <div class="attribute-input">
@@ -171,7 +169,7 @@
                                 </div>
                             </div>
                         </div>
-                     </div>
+                    </div>
                 </div>
 
                 <!-- Right Column: Status -->
@@ -208,7 +206,7 @@
                                     <td><input type="number" disabled value="{{system.physical_status.instant_death.score}}" /></td>
                                     <td><input type="number" disabled value="{{system.physical_status.instant_death.armor}}" /></td>
                                     <td>DEAD</td>
-                                    <td> - </td>
+                                    <td>-</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -227,50 +225,38 @@
                     </div>
                 </div>
             </div>
-
-            <!-- System Shock -->
-            <!-- Momentarily relocated to save space. Since the bar is non-interactive, it doesn't need to be huge.
-            <div class="section-header">SYSTEM SHOCK</div>
-            <div class="shock-track">
-                <div class="shock-bar-container">
-                    <div class="threshold-marker" style="left: {{shockThresholdPosition}}">
-                        <span class="threshold-label">Threshold: {{system.physical_status.system_shock.shock_threshold}}</span>
-                    </div>
-                    <div class="shock-bar" style="width: {{currentShockWidth}}">
-                        <span class="current-shock-label">{{system.physical_status.system_shock.current_shock}}</span>
-                    </div>
-                </div>
-            </div>
-            -->
         </div>
 
-        <div class="tab" data-group="primary-tabs" data-tab="skills">
-            <p> Test. </p>
-            {{#each skillGroups as |skillGroup attribute|}}
-            <div class="skill-group">
-                <div class="section-header">{{attribute}} SKILLS</div>
-                <table class="skills-table">
-                    <thead>
-                        <tr>
-                            <th>Skill</th>
-                            <th>Level</th>
-                            <th>Complexity</th>
-                            <th>Specializations</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each skillGroup as |skill skillId|}}
-                        <tr class="skill {{#if skill.isComplex}}complex{{/if}} {{#if (eq skill.level 0)}}untrained{{/if}}">
-                            <td class="skill-name">{{skill.name}}</td>
-                            <td class="skill-level"><input type="number" name="system.skills.{{skillId}}.level" value="{{skill.level}}" /></td>
-                            <td class="skill-complexity">{{#if skill.isComplex}}Complex{{else}}Simple{{/if}}</td>
-                            <td class="skill-specs">{{#each skill.defaultSpecs}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
+        <!-- Skills Tab -->
+        <div class="tab" data-tab="skills">
+            <!-- Skills container for grid layout -->
+            <div class="skills-groups-container">
+                {{#each skillGroups as |skillGroup attribute|}}
+                <div class="skill-group">
+                    <div class="section-header">{{attribute}} SKILLS</div>
+                    <table class="skills-table">
+                        <thead>
+                            <tr>
+                                <th>Skill</th>
+                                <th>Level</th>
+                                <th>Complexity</th>
+                                <th>Specializations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each skillGroup as |skill skillId|}}
+                            <tr class="skill {{#if skill.isComplex}}complex{{/if}} {{#if (eq skill.level 0)}}untrained{{/if}}">
+                                <td class="skill-name">{{skill.name}}</td>
+                                <td class="skill-level"><input type="number" name="system.skills.{{skillId}}.level" value="{{skill.level}}" /></td>
+                                <td class="skill-complexity">{{#if skill.isComplex}}Complex{{else}}Simple{{/if}}</td>
+                                <td class="skill-specs">{{#each skill.defaultSpecs}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                {{/each}}
             </div>
-            {{/each}}
         </div>
 
         <!-- Combat Tab -->
